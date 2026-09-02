@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samrazya – Premium Services</title>
+    <meta name="description" content="Samrazya provides top-quality digital solutions, consulting, and business services. Trusted by 500+ clients." />
+    <link rel="canonical" href="https://samrazya.com" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f8fafc;
+            color: #0b1a2e;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #0b1a2e;
+            color: #fff;
+            padding: 18px 0;
+            border-bottom: 4px solid #25d366;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .logo span {
+            color: #25d366;
+        }
+        .logo small {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #aab9d4;
+            letter-spacing: 1px;
+        }
+        .nav a {
+            color: #dce4f0;
+            margin-left: 28px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav a:hover {
+            color: #25d366;
+        }
+        .nav a.cta-btn {
+            background: #25d366;
+            color: #0b1a2e;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .nav a.cta-btn:hover {
+            background: #34eb7a;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a3550 100%);
+            color: #fff;
+            padding: 80px 0 70px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .hero h1 span {
+            color: #25d366;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #cbdae9;
+        }
+        .hero .btn {
+            display: inline-block;
+            background: #25d366;
+            color: #0b1a2e;
+            padding: 14px 48px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background: #34eb7a;
+            transform: scale(1.03);
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 70px 0;
+            background: #fff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .section-title span {
+            color: #25d366;
+        }
+        .section-sub {
+            text-align: center;
+            color: #4a5a72;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 30px 22px;
+            text-align: center;
+            transition: 0.25s;
+            border: 1px solid #e9edf4;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+        .service-card .icon {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            color: #3d5068;
+            font-size: 0.98rem;
+        }
+
+        /* ===== ABOUT + CONTACT ===== */
+        .about-contact {
+            padding: 60px 0;
+            background: #f0f4fb;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .two-col h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .two-col h2 span {
+            color: #25d366;
+        }
+        .contact-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        .contact-info p {
+            margin: 12px 0;
+            font-size: 1.05rem;
+        }
+        .contact-info strong {
+            color: #0b1a2e;
+        }
+
+        /* ===== WHATSAPP BUTTON (FLOATING) ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 60px;
+            padding: 16px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.06);
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.55);
+        }
+        .whatsapp-float img {
+            width: 28px;
+            height: 28px;
+        }
+        .whatsapp-float .whatsapp-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        /* ===== WHATSAPP IN CONTACT ===== */
+        .wa-btn {
+            display: inline-block;
+            background: #25d366;
+            color: #0b1a2e;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .wa-btn:hover {
+            background: #34eb7a;
+            transform: scale(1.02);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0b1a2e;
+            color: #b0c2db;
+            padding: 40px 0 25px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .footer-grid a {
+            color: #b0c2db;
+            display: block;
+            margin: 6px 0;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+        .footer-grid a:hover {
+            color: #25d366;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1f3650;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .logo {
+                font-size: 1.7rem;
+            }
+            .whatsapp-float {
+                bottom: 18px;
+                right: 18px;
+                padding: 12px 18px;
+                font-size: 0.95rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 0;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            .whatsapp-float span.wa-text {
+                display: none;
+            }
+            .whatsapp-float {
+                padding: 14px 16px;
+                border-radius: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            SAMRAZYA<span>.</span>
+            <small>Premium Business Services</small>
+        </div>
+        <div class="nav">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/918530469659?text=Hi%20Samrazya%20Team%2C%20I%20need%20help!" target="_blank" class="cta-btn">💬 WhatsApp</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <h1>Grow Your Business with <span>Samrazya</span></h1>
+        <p>We deliver trusted digital solutions, consulting, and support to help you scale — transparent, honest, and results-driven.</p>
+        <a href="https://wa.me/918530469659?text=Hi%20Samrazya%20Team%2C%20I%20want%20to%20grow%20my%20business!" target="_blank" class="btn">💬 Chat on WhatsApp →</a>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">What We <span>Offer</span></h2>
+        <p class="section-sub">Practical, high‑quality services tailored for modern businesses.</p>
+        <div class="grid-3">
+            <div class="service-card">
+                <div class="icon">📊</div>
+                <h3>Digital Strategy</h3>
+                <p>Data‑driven planning to boost your online presence and sales.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">💻</div>
+                <h3>Web & App Solutions</h3>
+                <p>Fast, secure, and user‑friendly websites and mobile apps.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📈</div>
+                <h3>Performance Marketing</h3>
+                <p>Google Ads, Social Media, and ROI‑focused campaigns.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🧠</div>
+                <h3>Business Consulting</h3>
+                <p>Expert advice for operations, finance, and growth.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🛡️</div>
+                <h3>Brand Protection</h3>
+                <p>Reputation management and legal compliance support.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🤝</div>
+                <h3>24/7 Support</h3>
+                <p>Dedicated team to assist you anytime, anywhere.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT + CONTACT ===== -->
+<section class="about-contact" id="about">
+    <div class="container two-col">
+        <div>
+            <h2>About <span>Samrazya</span></h2>
+            <p style="font-size:1.05rem; margin-bottom:16px;">
+                Samrazya was founded with a simple mission — to help businesses succeed through honest, high‑quality services. 
+                We combine technology, strategy, and human touch to deliver real value.
+            </p>
+            <p style="color:#3d5068;">
+                ✅ 500+ satisfied clients<br />
+                ✅ 98% retention rate<br />
+                ✅ Transparent pricing, no hidden fees
+            </p>
+        </div>
+        <div class="contact-info" id="contact">
+            <h2 style="font-size:1.6rem; margin-top:0;">📬 Let’s Talk</h2>
+            <p><strong>📞 Phone:</strong> +91 1800-419-3355</p>
+            <p><strong>✉️ Email:</strong> support@samrazya.com</p>
+            <p><strong>📍 Address:</strong> B-42, Sector 63, Noida, UP – 201301, India</p>
+            <p style="margin-top:12px;">
+                <strong>💬 WhatsApp:</strong> 
+                <a href="https://wa.me/918530469659?text=Hi%20Samrazya%20Team%2C%20I%20need%20support!" target="_blank" style="color:#25d366; font-weight:700;">+91 8530469659</a>
+            </p>
+            <a href="https://wa.me/918530469659?text=Hi%20Samrazya%20Team%2C%20I%20need%20support!" target="_blank" class="wa-btn">💬 Chat on WhatsApp</a>
+            <p style="margin-top:18px; background:#f0f4fb; padding:12px; border-radius:10px;">
+                ⏳ Mon–Fri, 9:00 AM – 6:00 PM IST
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>Samrazya</h4>
+                <p style="color:#b0c2db; font-size:0.95rem;">Premium services built on trust and excellence.</p>
+                <p style="margin-top:8px; color:#25d366;">📱 +91 8530469659</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div>
+                <h4>Policies</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://wa.me/918530469659" target="_blank">💬 WhatsApp</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Samrazya. All rights reserved. | Made with ❤️ in India
+        </div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+<a href="https://wa.me/918530469659?text=Hi%20Samrazya%20Team%2C%20I%20need%20help!" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-icon">💬</span>
+    <span class="wa-text">Chat on WhatsApp</span>
+</a>
+
+</body>
+</html>
